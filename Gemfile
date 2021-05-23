@@ -39,6 +39,9 @@ gem 'dotenv-rails'
 # deviseを使用できる
 gem 'devise'
 
+#graph作成
+gem "chartkick" 
+
 # bootstrapを使用できる
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
