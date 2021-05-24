@@ -46,6 +46,8 @@ gem "chartkick"
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
+gem 'pry-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

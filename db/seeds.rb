@@ -16,3 +16,11 @@ CSV.foreach('db/station_shinjukuline.csv', headers: true) do |row|
     line: row[2],
   )
 end
+
+CSV.foreach('db/shinjuku_post_dummy.csv', headers: true) do |row|
+  Station.create(
+    station_name: row[0],
+    station_number: row[1],
+    line: row[2],
+  )
+end
