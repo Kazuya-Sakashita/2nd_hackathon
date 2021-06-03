@@ -44,4 +44,3 @@ end
     comment: Faker::Games::StreetFighter.quote,
   )
 end
-
