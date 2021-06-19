@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable, :trackable
   has_many :posts, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  
+
   def already_favorited?(station, direction)
     self.favorites.exists?(station_id: station.id, direction: direction)
   end

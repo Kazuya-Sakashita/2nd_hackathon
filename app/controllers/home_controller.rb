@@ -17,12 +17,23 @@ class HomeController < ApplicationController
   end
 
   def search
+    @station = Station.find_by(id: params[:q][:station_id])
     @results = @q.result
     @search = Post.where(direction:params[:q][:direction]).where(station_id:params[:q][:station_id]).where(day_of_week:params[:q][:day_of_week])
     @graph = @search.group(:time).order(time: 'ASC').average(:congestion_level)
     respond_to do |format|
       format.html { render :index }
       format.js
+    end
+  end
+
+  def favorite
+    @user = current_user
+    @favorites = @user.favorites
+    if @favorites.present?
+      true
+    else
+      redirect_to root_path
     end
   end
 
