@@ -4,7 +4,6 @@ class HomeController < ApplicationController
   before_action :set_scraping, only: [:index, :search]
   before_action :set_posts, only: [:index, :search]
 
-
   def index    
     @graph = Post.group(:time).order(time: 'ASC').average(:congestion_level)
   end
@@ -24,16 +23,6 @@ class HomeController < ApplicationController
     respond_to do |format|
       format.html { render :index }
       format.js
-    end
-  end
-
-  def favorite
-    @user = current_user
-    @favorites = @user.favorites
-    if @favorites.present?
-      true
-    else
-      redirect_to root_path
     end
   end
 

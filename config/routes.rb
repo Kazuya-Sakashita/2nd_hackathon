@@ -31,10 +31,10 @@ Rails.application.routes.draw do
   end
 
   root to: 'home#index'
+  get 'home/about', as: 'about'
+  get 'home/search', as: 'search'
   delete "home/#{":station_id"}/favorites", to: 'favorites#destroy', as: 'destroy_favorites'
   post "home/#{":station_id"}/favorites", to: 'favorites#create', as: 'add_favorites'
-  get 'home/search', as: 'search'
-  get 'home/about', as: 'about'
   resources :posts
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
